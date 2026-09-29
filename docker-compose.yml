@@ -1,0 +1,12 @@
+services:
+  nova:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - JWT_SECRET=CHANGE_ME_TO_A_LONG_RANDOM_SECRET
+    volumes:
+      - nova_data:/app/server
+volumes:
+  nova_data:
